@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Valentine’s Day, Sbusiso!</title>
+<style>
+  body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    /* Golden gradient background */
+    background: linear-gradient(135deg, #FFD700, #FFE8A1);
+    overflow-x: hidden;
+    text-align: center;
+    color: #fff;
+    position: relative;
+    height: 100vh;
+    padding-bottom: 50px;
+  }
+
+  /* Continuous heart animation */
+  .heart {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: red;
+    transform: rotate(45deg);
+    animation: float 6s linear infinite;
+    z-index: 1;
+  }
+
+  .heart::before,
+  .heart::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: red;
+    border-radius: 50%;
+  }
+
+  .heart::before {
+    top: -10px;
+    left: 0;
+  }
+
+  .heart::after {
+    left: 10px;
+    top: 0;
+  }
+
+  @keyframes float {
+    0% { transform: translateY(0) rotate(45deg); opacity: 1; }
+    100% { transform: translateY(-800px) rotate(45deg); opacity: 0; }
+  }
+
+  h1 {
+    margin-top: 50px;
+    font-size: 2.5em;
+  }
+
+  p {
+    font-size: 1.1em;
+    margin: 20px auto;
+    width: 85%;
+    line-height: 1.6em;
+    text-align: left;
+  }
+
+  img {
+    width: 70%;
+    max-width: 300px;
+    border-radius: 50%;
+    border: 5px solid white;
+    margin-top: 30px;
+  }
+
+  button {
+    margin-top: 30px;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 50px;
+    background-color: #ff4d6d;
+    color: white;
+    cursor: pointer;
+    transition: transform 0.2s;
+  }
+
+  button:hover {
+    transform: scale(1.1);
+  }
+
+</style>
+</head>
+<body>
+
+<h1>Happy Valentine’s Day, Sbusiso! 💖</h1>
+
+<!-- Sbusiso's picture -->
+<img src="your-photo.jpg.jpeg" alt="Sbusiso" />
+
+<!-- Your full Valentine message -->
+<p>
+My love,<br><br>
+
+Even though we’re miles apart right now, I feel you close in every thought, every heartbeat, and every smile I imagine. Not a day goes by that I don’t miss you, and I keep dreaming about the moment we’ll finally be together again. You make my day brighter, and even from afar, I feel your love surrounding me.<br><br>
+
+I can’t wait to hold you, laugh with you, and make up for all the time we’ve been apart. Until then, know that you are my heart, my joy, and my forever Valentine. March may be a little far off, but every day brings me closer to you and I’ll be counting each one with love and excitement.<br><br>
+
+I love you ❤️
+</p>
+
+<!-- Button with extra hearts -->
+<button onclick="burstHearts()">Send My Love ❤️</button>
+
+<!-- Background music -->
+<audio id="bgMusic" autoplay loop>
+  <source src="romantic-music.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+  // Continuous floating hearts
+  function createHeart() {
+    const heart = document.createElement('div');
+    heart.className = 'heart';
+    heart.style.left = Math.random() * window.innerWidth + 'px';
+    heart.style.top = window.innerHeight + 'px';
+    heart.style.animationDuration = (5 + Math.random() * 3) + 's';
+    document.body.appendChild(heart);
+    setTimeout(() => heart.remove(), 8000);
+  }
+
+  // Create hearts automatically every 300ms
+  setInterval(createHeart, 300);
+
+  // Extra burst of hearts on button click
+  function burstHearts() {
+    for(let i = 0; i < 20; i++) {
+      const heart = document.createElement('div');
+      heart.className = 'heart';
+      heart.style.left = Math.random() * window.innerWidth + 'px';
+      heart.style.top = window.innerHeight + 'px';
+      heart.style.animationDuration = (4 + Math.random() * 2) + 's';
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 6000);
+    }
+  }
+</script>
+
+</body>
+</html>
